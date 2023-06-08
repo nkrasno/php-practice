@@ -40,6 +40,31 @@
         </form>
 
     </div>
+    
+    <script>
+        function validarFormulario() {
+            // Obtener los valores de los campos del formulario
+            const nombre = document.getElementById('nombre').value;
+            const apellido = document.getElementById('apellido').value;
+            const email = document.getElementById('email').value;
+
+            // Validar que los campos no estén vacíos
+            if (nombre === "" || apellido === "" || email === "") {
+                alert("Por favor, complete todos los campos.");
+                return false;
+            }
+
+            // Validar el formato del correo electrónico
+            let validEmail = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+            if (!validEmail.test(email)) {
+                alert("Por favor, ingrese un correo electrónico válido.");
+                return false;
+            }
+
+            // Si todas las validaciones pasan, enviar el formulario
+            return true;
+        }
+    </script>
 
 </body>
 
