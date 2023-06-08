@@ -5,7 +5,7 @@ if (isset($_POST['submit'])) {
     $email = $_POST["email"];
 
 
-    // Comprobar si los datos están vacíos
+    // Comprobar si los datos están vacíos y si el correo ingresado cumple con el formato correcto
     if (empty($nombre) || empty($apellido) || empty($email)) {
         echo "Los campos no pueden estar vacíos, por favor vuelva atrás.";
         exit();
@@ -27,7 +27,7 @@ if (isset($_POST['submit'])) {
         die("Error de conexión: " . $conn->connect_error);
     }
 
-    // Obtener las longitudes máximas permitidas en la tabla
+    // Obtener las longitudes máximas permitidas en cada columna de la tabla
     $max_length_nombre = obtenerMaxLongitud($conn, "usuarios", "nombre");
     $max_length_apellido = obtenerMaxLongitud($conn, "usuarios", "apellido");
     $max_length_email = obtenerMaxLongitud($conn, "usuarios", "email");
