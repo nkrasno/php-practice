@@ -16,7 +16,8 @@
         <h2 class="form-title">Formulario de Registro</h2>
         <h4 class="form-subtitle">Los campos marcados con (*) son obligatorios.</h4>
 
-        <form name="formulario" action="procesar_formulario.php" method="post">
+        <form name="formulario" action="procesar_formulario.php" method="post" onsubmit="return validarFormulario();">
+
 
             <div class="form-input">
                 <label for="nombre">(*) Nombre:</label>
